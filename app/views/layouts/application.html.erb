@@ -45,12 +45,19 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">ClmApp</a>
+        <a class="navbar-brand" href="#">CLM</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <% if current_user %>
+              <li><%= link_to "Companies", "/path1"  %></li>
+              <li><%= link_to "People", "/path2"  %></li>
+              <li><%= link_to "Sites", "/path3"  %></li>
+            <% else %>
+              <li><%= link_to "Products", "/path1"  %></li>
+              <li><%= link_to "Solutions", "/path2"  %></li>
+              <li><%= link_to "News", "/path3"  %></li>
+              <li><%= link_to "About", "/path3"  %></li>
+            <% end %>
           </ul>
           <ul class="nav navbar-right col-md-4">
             <% if current_user %>
@@ -79,7 +86,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2016</p>
+        <p>&copy; CLM Software, Inc 2016</p>
       </footer>
 
     </div> <!-- /container -->
