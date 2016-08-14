@@ -8,6 +8,9 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.web_console.whiny_requests = false
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { :host => 'https://clm-kmichelsen.c9users.io'}
 
   # Show full error reports.
   config.consider_all_requests_local = true
